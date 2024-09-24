@@ -8,14 +8,14 @@ Future<void> deleteStudent(
   try {
     final response = await http.delete(
       Uri.parse(
-          'http://10.0.2.2:8000/api/students/$studentId'), // DELETE request
+          'http://127.0.0.1:8000/api/students/$studentId'), // DELETE request
     );
 
     if (response.statusCode == 200) {
       // If deleted successfully
       deleteCallback(studentId); // Call the delete callback
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Student deleted successfully!')),
+        const SnackBar(content: Text('goodbye')),
       );
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -27,8 +27,7 @@ Future<void> deleteStudent(
     }
   } catch (e) {
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-          content: Text('Failed to delete student. Please try again.')),
+      const SnackBar(content: Text('ok bkt ayaw mo mawala')),
     );
   }
 }

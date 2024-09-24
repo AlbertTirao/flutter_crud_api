@@ -51,7 +51,7 @@ class _ReadScreenState extends State<ReadScreen> {
             ),
             body: Center(
               child: notifier.students.isEmpty
-                  ? const Text('No students available.')
+                  ? const Text('Mag lagay ka kasi ng data')
                   : ListView.builder(
                       itemCount: notifier.students.length,
                       itemBuilder: (context, index) {

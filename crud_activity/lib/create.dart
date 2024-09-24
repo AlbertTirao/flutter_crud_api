@@ -41,7 +41,7 @@ class _CreateStudentScreenState extends State<CreateStudentScreen> {
       try {
         // Send Post Request para mag create ng data
         final response = await http.post(
-          Uri.parse('http://10.0.2.2:8000/api/students'),
+          Uri.parse('http://127.0.0.1:8000/api/students'),
           headers: {'Content-Type': 'application/json'},
           body: json.encode(newStudent.toJson()),
         );
@@ -53,7 +53,7 @@ class _CreateStudentScreenState extends State<CreateStudentScreen> {
           final createdStudent = Student.fromJson(json.decode(response.body));
           widget.onStudentCreated(createdStudent);
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Student created successfully!')),
+            const SnackBar(content: Text('yay success')),
           );
           Navigator.pop(context);
         } else {
@@ -65,8 +65,7 @@ class _CreateStudentScreenState extends State<CreateStudentScreen> {
         }
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text('Failed to create student. Please try again.')),
+          const SnackBar(content: Text('Bkt ayaw mag create ahhhh')),
         );
       }
     }

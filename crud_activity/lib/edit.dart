@@ -55,7 +55,7 @@ class _EditStudentScreenState extends State<EditStudentScreen> {
       try {
         // Send Put request para i update and student
         final response = await http.put(
-          Uri.parse('http://10.0.2.2:8000/api/students/${widget.student.id}'),
+          Uri.parse('http://127.0.0.1:8000/api/students/${widget.student.id}'),
           headers: {'Content-Type': 'application/json'},
           body: json.encode(updatedStudent.toJson()),
         );
@@ -66,7 +66,7 @@ class _EditStudentScreenState extends State<EditStudentScreen> {
           //Success sa pag update ng studentss
           widget.onStudentUpdated(updatedStudent);
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Student updated successfully!')),
+            const SnackBar(content: Text('panu nangyari yun?')),
           );
           Navigator.pop(context);
         } else {
@@ -79,8 +79,7 @@ class _EditStudentScreenState extends State<EditStudentScreen> {
         }
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text('Failed to update student. Please try again.')),
+          const SnackBar(content: Text('bkt kasi ayaw mag update ******')),
         );
       }
     }
